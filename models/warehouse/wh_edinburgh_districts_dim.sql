@@ -1,3 +1,7 @@
+{{ config(
+    unique_key='postcode_district'
+)}}
+
 select 
     *
 from
