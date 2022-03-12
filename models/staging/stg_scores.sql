@@ -8,9 +8,9 @@ with cte1 as (
         ,grocery_score
         ,livability_score
         ,price_score
-        ,property_id
+        ,cast(property_id as string) as property_id
         ,sqm_price_score
-        ,total_score
+        ,cast(total_score as numeric) as total_score
     from `ra-development.amir_analytics_dev.sheets_scores`
 )
 

@@ -7,6 +7,7 @@ with cte1 as (
         ,bedrooms
         ,cons
         ,district
+        ,left(district,2) as district_short
         ,link_url
         -- ,livability
         ,minutes_to_central_station_by_public_transport
