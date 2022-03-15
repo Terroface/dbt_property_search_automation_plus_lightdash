@@ -1,4 +1,7 @@
-
+.python-version
 target/
-dbt_packages/
+dbt_modules/
 logs/
+.DS_Store
+environment.yml
+.vscode/

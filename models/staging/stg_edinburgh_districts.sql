@@ -1,13 +1,12 @@
-with cte1 as (
+with source as (
     select
-        -- ,_row
-        -- ,_fivetran_synced
-        coverage
-        ,local_authority_areas
-        ,post_town
-        ,postcode_district
-        ,relation_to_edinburgh
-    from `ra-development.amir_analytics_dev.sheets_edinburgh_districts_2`
+        cast(postcode_district as string) as postcode_district  -- Not lowered because case sensitive
+        ,lower(cast(coverage as string)) as coverage
+        ,lower(cast(local_authority_areas as string)) as local_authority_areas
+        ,lower(cast(post_town as string)) as post_town
+        ,lower(cast(relation_to_edinburgh as string)) as relation_to_edinburgh
+    from 
+        {{ source('staging_facts', 's_sheets_edinburgh_districts_2') }}
 )
 
-select * from cte1
+select * from source
