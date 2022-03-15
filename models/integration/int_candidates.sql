@@ -7,7 +7,7 @@ with s_candidates as(
 
 s_scores as (
     select * from {{ ref('stg_scores') }}
-),
+), --
 
 candidates_scores_merged as (
     select 
