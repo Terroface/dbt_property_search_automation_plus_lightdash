@@ -1,0 +1,22 @@
+version: 2
+
+models:
+
+  - name: wh_candidates_fact
+    columns:
+      - name: property_id
+        tests:
+          - unique:
+              severity: warn # default: error
+          - not_null
+          - relationships:
+              to: ref('wh_edinburgh_districts_dim')
+              field: postcode_district
+              severity: warn
+
+  - name: wh_edinburgh_districts_dim
+    columns:
+      - name: postcode_district
+        tests:
+          - unique
+          - not_null

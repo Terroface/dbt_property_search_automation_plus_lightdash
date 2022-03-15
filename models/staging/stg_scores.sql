@@ -1,17 +1,16 @@
-with cte1 as (
+with source as (
     select
-        -- ,_row
-        -- ,_fivetran_synced
-        bathrooms_score
-        ,bedrooms_score
-        ,central_station_score
-        ,grocery_score
-        ,livability_score
-        ,price_score
-        ,cast(property_id as string) as property_id
-        ,sqm_price_score
+        lower(cast(property_id as string)) as property_id
+        ,cast(bathrooms_score as numeric) as bathrooms_score
+        ,cast(bedrooms_score as numeric) as bedrooms_score
+        ,cast(central_station_score as numeric) as central_station_score
+        ,cast(grocery_score as numeric) as grocery_score
+        ,cast(livability_score as numeric) as livability_score
+        ,cast(price_score as numeric) as price_score
+        ,cast(sqm_price_score as numeric) as sqm_price_score
         ,cast(total_score as numeric) as total_score
-    from `ra-development.amir_analytics_dev.sheets_scores`
+    from 
+        {{ source('staging_facts', 's_sheets_scores') }}
 )
 
-select * from cte1
+select * from source

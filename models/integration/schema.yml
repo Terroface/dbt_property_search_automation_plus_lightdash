@@ -1,0 +1,22 @@
+version: 2
+
+models:
+
+  - name: int_candidates
+    columns:
+      - name: property_id
+        tests:
+          - unique:
+              severity: warn
+          - not_null
+          - relationships:
+              to: ref('int_edinburgh_districts')
+              field: postcode_district
+              severity: warn
+
+  - name: int_edinburgh_districts
+    columns:
+      - name: postcode_district
+        tests:
+          - unique
+          - not_null
