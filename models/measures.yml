@@ -1,0 +1,10 @@
+version: 2
+models:
+  - name: wh_candidates_fact
+    columns:
+      - name: property_id_natural_key
+        description: "Unique identifier of a property"
+        meta:
+          metrics:
+            total_property_count:
+              type: count_distinct
