@@ -191,6 +191,11 @@ models:
         tests:
           - dbt_utils.at_least_one
   - name: wh_candidates_fact
+    meta:
+      joins:
+        - join: wh_edinburgh_districts_dim
+          sql_on: ${wh_candidates_fact.district_fk} = ${wh_edinburgh_districts_dim.district_pk}
+
     columns:
       - name: address
         tests:
