@@ -56,6 +56,11 @@ models:
       - name: property_id_natural_key
         tests:
           - dbt_utils.at_least_one
+        description: "Unique identifier of a property"
+        meta:
+          metrics:
+            total_property_count:
+              type: count_distinct
       - name: property_type
         tests:
           - dbt_utils.at_least_one

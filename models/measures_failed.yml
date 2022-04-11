@@ -1,3 +1,5 @@
+# Can't refer to the same model in two .yml files (candidates already in droughty_schema.yml)
+
 # version: 2
 # models:
 #   - name: wh_candidates_fact
