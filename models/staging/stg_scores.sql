@@ -1,6 +1,6 @@
 with source as (
     select
-        lower(cast(property_id as string)) as property_id
+        lower(cast(property_id as string)) as property_id_natural_key
         ,cast(bathrooms_score as numeric) as bathrooms_score
         ,cast(bedrooms_score as numeric) as bedrooms_score
         ,cast(central_station_score as numeric) as central_station_score

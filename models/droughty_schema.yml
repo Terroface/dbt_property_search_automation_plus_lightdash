@@ -1,0 +1,297 @@
+version: 2
+models:
+  - name: int_candidates
+    columns:
+      - name: address
+        tests:
+          - dbt_utils.at_least_one
+      - name: bathrooms
+        tests:
+          - dbt_utils.at_least_one
+      - name: bathrooms_score
+        tests:
+          - dbt_utils.at_least_one
+      - name: bedrooms
+        tests:
+          - dbt_utils.at_least_one
+      - name: bedrooms_score
+        tests:
+          - dbt_utils.at_least_one
+      - name: central_station_score
+        tests:
+          - dbt_utils.at_least_one
+      - name: cons
+        tests:
+          - dbt_utils.at_least_one
+      - name: district_natural_key
+        tests:
+          - dbt_utils.at_least_one
+      - name: district_short
+        tests:
+          - dbt_utils.at_least_one
+      - name: grocery_score
+        tests:
+          - dbt_utils.at_least_one
+      - name: link_url
+        tests:
+          - dbt_utils.at_least_one
+      - name: livability_score
+        tests:
+          - dbt_utils.at_least_one
+      - name: minutes_to_central_station_by_public_transport
+        tests:
+          - dbt_utils.at_least_one
+      - name: minutes_to_nearest_grocery_store_on_foot
+        tests:
+          - dbt_utils.at_least_one
+      - name: name_of_page
+        tests:
+          - dbt_utils.at_least_one
+      - name: price_gbp
+        tests:
+          - dbt_utils.at_least_one
+      - name: price_score
+        tests:
+          - dbt_utils.at_least_one
+      - name: property_id_natural_key
+        tests:
+          - dbt_utils.at_least_one
+      - name: property_type
+        tests:
+          - dbt_utils.at_least_one
+      - name: pros
+        tests:
+          - dbt_utils.at_least_one
+      - name: sqm
+        tests:
+          - dbt_utils.at_least_one
+      - name: sqm_price
+        tests:
+          - dbt_utils.at_least_one
+      - name: sqm_price_score
+        tests:
+          - dbt_utils.at_least_one
+      - name: title
+        tests:
+          - dbt_utils.at_least_one
+      - name: total_score
+        tests:
+          - dbt_utils.at_least_one
+  - name: int_edinburgh_districts
+    columns:
+      - name: coverage
+        tests:
+          - dbt_utils.at_least_one
+      - name: district_natural_key
+        tests:
+          - dbt_utils.at_least_one
+      - name: local_authority_areas
+        tests:
+          - dbt_utils.at_least_one
+      - name: post_town
+        tests:
+          - dbt_utils.at_least_one
+      - name: relation_to_edinburgh
+        tests:
+          - dbt_utils.at_least_one
+  - name: stg_candidates
+    columns:
+      - name: address
+        tests:
+          - dbt_utils.at_least_one
+      - name: bathrooms
+        tests:
+          - dbt_utils.at_least_one
+      - name: bedrooms
+        tests:
+          - dbt_utils.at_least_one
+      - name: cons
+        tests:
+          - dbt_utils.at_least_one
+      - name: district_natural_key
+        tests:
+          - dbt_utils.at_least_one
+      - name: link_url
+        tests:
+          - dbt_utils.at_least_one
+      - name: minutes_to_central_station_by_public_transport
+        tests:
+          - dbt_utils.at_least_one
+      - name: minutes_to_nearest_grocery_store_on_foot
+        tests:
+          - dbt_utils.at_least_one
+      - name: name_of_page
+        tests:
+          - dbt_utils.at_least_one
+      - name: price_gbp
+        tests:
+          - dbt_utils.at_least_one
+      - name: property_id_natural_key
+        tests:
+          - dbt_utils.at_least_one
+      - name: property_type
+        tests:
+          - dbt_utils.at_least_one
+      - name: pros
+        tests:
+          - dbt_utils.at_least_one
+      - name: sqm
+        tests:
+          - dbt_utils.at_least_one
+      - name: sqm_price
+        tests:
+          - dbt_utils.at_least_one
+      - name: title
+        tests:
+          - dbt_utils.at_least_one
+  - name: stg_edinburgh_districts
+    columns:
+      - name: coverage
+        tests:
+          - dbt_utils.at_least_one
+      - name: district_natural_key
+        tests:
+          - dbt_utils.at_least_one
+      - name: local_authority_areas
+        tests:
+          - dbt_utils.at_least_one
+      - name: post_town
+        tests:
+          - dbt_utils.at_least_one
+      - name: relation_to_edinburgh
+        tests:
+          - dbt_utils.at_least_one
+  - name: stg_scores
+    columns:
+      - name: bathrooms_score
+        tests:
+          - dbt_utils.at_least_one
+      - name: bedrooms_score
+        tests:
+          - dbt_utils.at_least_one
+      - name: central_station_score
+        tests:
+          - dbt_utils.at_least_one
+      - name: grocery_score
+        tests:
+          - dbt_utils.at_least_one
+      - name: livability_score
+        tests:
+          - dbt_utils.at_least_one
+      - name: price_score
+        tests:
+          - dbt_utils.at_least_one
+      - name: property_id_natural_key
+        tests:
+          - dbt_utils.at_least_one
+      - name: sqm_price_score
+        tests:
+          - dbt_utils.at_least_one
+      - name: total_score
+        tests:
+          - dbt_utils.at_least_one
+  - name: wh_candidates_fact
+    columns:
+      - name: address
+        tests:
+          - dbt_utils.at_least_one
+      - name: bathrooms
+        tests:
+          - dbt_utils.at_least_one
+      - name: bathrooms_score
+        tests:
+          - dbt_utils.at_least_one
+      - name: bedrooms
+        tests:
+          - dbt_utils.at_least_one
+      - name: bedrooms_score
+        tests:
+          - dbt_utils.at_least_one
+      - name: central_station_score
+        tests:
+          - dbt_utils.at_least_one
+      - name: cons
+        tests:
+          - dbt_utils.at_least_one
+      - name: district_fk
+        tests:
+          - not_null
+      - name: district_natural_key
+        tests:
+          - dbt_utils.at_least_one
+      - name: district_short
+        tests:
+          - dbt_utils.at_least_one
+      - name: grocery_score
+        tests:
+          - dbt_utils.at_least_one
+      - name: link_url
+        tests:
+          - dbt_utils.at_least_one
+      - name: livability_score
+        tests:
+          - dbt_utils.at_least_one
+      - name: minutes_to_central_station_by_public_transport
+        tests:
+          - dbt_utils.at_least_one
+      - name: minutes_to_nearest_grocery_store_on_foot
+        tests:
+          - dbt_utils.at_least_one
+      - name: name_of_page
+        tests:
+          - dbt_utils.at_least_one
+      - name: price_gbp
+        tests:
+          - dbt_utils.at_least_one
+      - name: price_score
+        tests:
+          - dbt_utils.at_least_one
+      - name: property_id_natural_key
+        tests:
+          - dbt_utils.at_least_one
+      - name: property_id_pk
+        tests:
+          - not_null
+          - unique
+      - name: property_type
+        tests:
+          - dbt_utils.at_least_one
+      - name: pros
+        tests:
+          - dbt_utils.at_least_one
+      - name: sqm
+        tests:
+          - dbt_utils.at_least_one
+      - name: sqm_price
+        tests:
+          - dbt_utils.at_least_one
+      - name: sqm_price_score
+        tests:
+          - dbt_utils.at_least_one
+      - name: title
+        tests:
+          - dbt_utils.at_least_one
+      - name: total_score
+        tests:
+          - dbt_utils.at_least_one
+  - name: wh_edinburgh_districts_dim
+    columns:
+      - name: coverage
+        tests:
+          - dbt_utils.at_least_one
+      - name: district_natural_key
+        tests:
+          - dbt_utils.at_least_one
+      - name: district_pk
+        tests:
+          - not_null
+          - unique
+      - name: local_authority_areas
+        tests:
+          - dbt_utils.at_least_one
+      - name: post_town
+        tests:
+          - dbt_utils.at_least_one
+      - name: relation_to_edinburgh
+        tests:
+          - dbt_utils.at_least_one

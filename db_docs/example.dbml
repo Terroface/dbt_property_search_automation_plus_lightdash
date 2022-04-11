@@ -1,0 +1,39 @@
+project project_value
+{ database_type: 'bigquery' }
+table wh_candidates_fact      {
+property_id_pk varchar [pk]
+district_fk varchar [ref: - wh_edinburgh_districts_dim.district_pk]
+property_id_natural_key varchar
+district_natural_key varchar
+address varchar
+bathrooms numeric
+bathrooms_score numeric
+bedrooms numeric
+bedrooms_score numeric
+central_station_score numeric
+cons varchar
+district_short varchar
+grocery_score numeric
+link_url varchar
+livability_score numeric
+minutes_to_central_station_by_public_transport numeric
+minutes_to_nearest_grocery_store_on_foot numeric
+name_of_page varchar
+price_gbp numeric
+price_score numeric
+property_type varchar
+pros varchar
+sqm numeric
+sqm_price numeric
+sqm_price_score numeric
+title varchar
+total_score numeric
+}
+table wh_edinburgh_districts_dim      {
+district_pk varchar [pk]
+district_natural_key varchar
+coverage varchar
+local_authority_areas varchar
+post_town varchar
+relation_to_edinburgh varchar
+}

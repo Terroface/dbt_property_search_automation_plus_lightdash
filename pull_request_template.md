@@ -7,7 +7,7 @@ Provide a short summary in the Title above. Examples of good PR titles:
 
 ## Description & motivation
 <!---
-Add a description of what that storie's goal is, or add a link to its associated Jira ticket.
+Add a description of what that story's goal is, or add a link to its associated Jira ticket.
 -->
 
 ## Changes to ERD

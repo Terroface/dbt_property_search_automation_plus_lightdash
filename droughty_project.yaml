@@ -1,0 +1,11 @@
+profile: ra-development
+
+dimensional_inference: enabled
+
+explores:
+
+  sales_explore:
+      parent_table: 
+        - wh_candidates_fact
+      dims:
+        - wh_edinburgh_districts_dim

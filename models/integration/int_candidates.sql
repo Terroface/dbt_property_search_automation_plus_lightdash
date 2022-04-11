@@ -1,18 +1,18 @@
 with s_candidates as(
     select
         *,
-        left(district,2) as district_short
+        left(district_natural_key,2) as district_short
     from {{ ref('stg_candidates') }} 
 ),
 
 s_scores as (
     select * from {{ ref('stg_scores') }}
-), --
+),
 
 candidates_scores_merged as (
     select 
-        s_candidates.property_id,
-        s_candidates.district,
+        s_candidates.property_id_natural_key,
+        s_candidates.district_natural_key,
         s_candidates.address,
         s_candidates.bathrooms,
         s_candidates.bedrooms,
@@ -38,7 +38,7 @@ candidates_scores_merged as (
         s_scores.total_score
     from
         s_candidates
-        left join s_scores using (property_id)
+        left join s_scores using (property_id_natural_key)
 )
 
 select * from candidates_scores_merged

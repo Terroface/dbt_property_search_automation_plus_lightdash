@@ -1,7 +1,7 @@
 with source as (
     select
-        lower(cast(property_id as string)) as property_id
-        ,cast(district as string) as district -- Not lowered because case sensitive
+        lower(cast(property_id as string)) as property_id_natural_key
+        ,cast(district as string) as district_natural_key -- Not lowered because case sensitive
         ,lower(cast(address as string)) as address
         ,cast(bathrooms as int64) as bathrooms
         ,cast(bedrooms as int64) as bedrooms

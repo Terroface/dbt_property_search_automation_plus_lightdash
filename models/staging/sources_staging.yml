@@ -3,13 +3,13 @@ version: 2
 sources:
   - name: staging_facts
     database: ra-development
-    schema: amir_analytics_dev
+    schema: amir_analytics_dev_source
 
     tables:
       - name: s_sheets_candidates
         identifier: sheets_candidates
       - name: s_sheets_scores
         identifier: sheets_scores
-      - name: s_sheets_edinburgh_districts_2
-        identifier: sheets_edinburgh_districts_2
+      - name: s_sheets_edinburgh_districts
+        identifier: sheets_edinburgh_districts
         
