@@ -296,6 +296,14 @@ models:
         tests:
           - not_null
           - unique
+        meta:
+          metrics:
+            total_district_count:
+              type: count_distinct
+            temp_count:
+              type: count
+            temp_sum:
+              type: sum
       - name: local_authority_areas
         tests:
           - dbt_utils.at_least_one
